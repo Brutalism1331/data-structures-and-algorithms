@@ -62,20 +62,16 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  for (let i = 0; i < word.length; i++) {
-    const uppercase = word.toUpperCase() + '!';
-    return uppercase;
-  }
-};
+const greeting = word => word.toUpperCase() + '!';
+
+
 
 const speaker = (words, callback) => {
-  const newArray = [];
+  const newArr = [];
   words.forEach(word => {
-    const uppercaseword = callback(word);
-    newArray.push(uppercaseword);
+    newArr.push(callback(word));
   });
-  return newArray;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,13 +91,14 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  for (let i = 0; i <= 5; i++) {
-    arr.push(value);
-  }
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++){
+    callback(arr,num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +120,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let list = [];
+
+  availableItems.forEach(item => {
+    if(item.available){
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
