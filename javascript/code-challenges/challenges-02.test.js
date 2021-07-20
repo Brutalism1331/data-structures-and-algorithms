@@ -107,7 +107,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 const evenOdd = (arr) => arr.map(input => {
   if (input % 2 === 0) {
     return 'even';
-  } else if (input !== 0) {
+  } else if (input % 2 !== 0) {
     return 'odd';
   } else (typeof input !== 'number');
   return 'N/A';
