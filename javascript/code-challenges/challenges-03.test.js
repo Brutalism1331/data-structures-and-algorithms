@@ -23,9 +23,13 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
+// i need to pass the prop (arr) into a filter method,
+// the value = X,
+// X Needs to be checked to see if it's value is a number (possibly using an includes method and comparing it to a boolean value),
+// The value should only be added to the newArr if it is a value: number
 
 const typeNum = (arr) => {
-  let newArr = arr.filter(arr => arr.includes(NaN));
+  let newArr = arr.filter(x => typeof x === 'number');
   return newArr;
 };
 
@@ -36,9 +40,15 @@ Write a function named containsAnd that, given an array of strings as input, use
 
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
+// I need to pass the prop (arr) into a filter method,
+// The value = X,
+// I need to check to see if X includes 'and' as part of the string,
+// If true return X into the newArr.
+
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  let newArr = arr.filter(x => x.includes('and'));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,9 +58,14 @@ Write a function named oddValues that, given an array of integers as input, uses
 
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
+// I need to take in an array and have each value filtered to see if it's value is odd,
+// The value will be assigned to X,
+// X % 2 = even/false,
+
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let newArr = arr.filter(x => x % 2);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,10 +75,10 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
+//I'm taking in two arrays X/Y,
+//I need to compare X - Y and only return a newArray if a value IsNot in the first array,
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(x => !forbiddenValues.includes(x));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
