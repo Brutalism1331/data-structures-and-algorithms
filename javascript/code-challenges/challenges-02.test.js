@@ -65,14 +65,9 @@ CHALLENGE 5
 
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
-// X= The number that is taken in from the arr value.
-// Y= The result of raising X= 2 to the power of the original input element.
+
 const forEachTwoToThe = (arr) => {
-  const newArr = [];
-  arr.forEach(x => {
-    const y = x = Math.pow(2, x);
-    newArr.push(y);
-  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,13 +100,14 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => arr.map(input => {
-  if (input % 2 === 0) {
-    return 'even';
+  if (typeof input !== 'number') {
+    return 'N/A';
   } else if (input % 2 !== 0) {
     return 'odd';
-  } else (typeof input !== 'number');
-  return 'N/A';
+  } else (input % 2 === 0);
+  return 'even';
 });
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -246,7 +242,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -275,7 +271,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
