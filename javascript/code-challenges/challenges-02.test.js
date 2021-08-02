@@ -67,8 +67,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-
+  let newArr = [];
+  arr.forEach(x => newArr.push(Math.pow(2, x)));
+  return newArr;
 };
+// test is returning undefined
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6

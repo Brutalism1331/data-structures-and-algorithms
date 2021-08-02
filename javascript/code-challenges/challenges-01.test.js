@@ -149,19 +149,21 @@ Return the resulting output array.
 // [x] not / 3or5 = x, else
 
 const fizzbuzz = (arr) => {
-  const newArr = arr.forEach(x => {
+  const newArr = [];
+  arr.forEach(x => {
     if (x % 3 === 0 && x % 5 === 0) {
-      return 'Fizz Buzz';
+      newArr.push('Fizz Buzz');
     } else if (x % 3 === 0) {
-      return 'Fizz';
+      newArr.push('Fizz');
     } else if (x % 5 === 0) {
-      return 'Buzz';
-    } else (x % 3 !== 0 || x % 5 !== 0);
-    return x;
-
+      newArr.push('Buzz');
+    } else {
+      newArr.push(x);
+    }
   });
   return newArr;
 };
+// Test returns undefined 
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
