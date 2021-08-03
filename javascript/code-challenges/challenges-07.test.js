@@ -26,7 +26,7 @@ let starWarsPeople = [
 // I'm not understanding how to use .sort() to return height from tallest to smallest.
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  starWarsArr.height.sort((a, b) => a.height - b.height);
+  return starWarsArr.sort((a, b) => parseInt(b.height) - parseInt(a.height));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,13 +35,10 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should remove three items in the array starting with the value at the index.
 ------------------------------------------------------------------------------------------------ */
 
-// A forLoop may not be the tool to use but i feel that i need to iterate over the array/index and use a method like shift to remove an object from the start of the array repeating this process three times.
+
 
 const removeThree = (idx, arr) => { 
   
-  for (let i = 0; i < 3; i++) {
-    i.shift();
-  }
 };
 
 /* ------------------------------------------------------------------------------------------------
