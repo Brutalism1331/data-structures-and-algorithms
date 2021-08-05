@@ -95,8 +95,8 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times; i++){
-    callback(arr,num);
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
   }
   return arr;
 };
@@ -123,7 +123,7 @@ const createList = (availableItems) => {
   let list = [];
 
   availableItems.forEach(item => {
-    if(item.available){
+    if (item.available) {
       list.push(item.name);
     }
   });
@@ -143,11 +143,27 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
+// [x] / 3or5 = Fizz Buzz, if
+// [x] / 3 = Fizz, ifElse,
+// [x] / 5 = Buzz, ifElse,
+// [x] not / 3or5 = x, else
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach(x => {
+    if (x % 3 === 0 && x % 5 === 0) {
+      newArr.push('Fizz Buzz');
+    } else if (x % 3 === 0) {
+      newArr.push('Fizz');
+    } else if (x % 5 === 0) {
+      newArr.push('Buzz');
+    } else {
+      newArr.push(x);
+    }
+  });
+  return newArr;
 };
-
+// Test returns undefined 
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
@@ -199,7 +215,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
