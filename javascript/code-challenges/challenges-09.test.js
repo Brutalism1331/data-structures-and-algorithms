@@ -126,7 +126,6 @@ const getHouses = (arr) => {
   Object.keys(arr).forEach(x => {
     let result = arr[x].house;
 
-    console.log('result is:' , `${result}`);
     if (result) {
       houses.push(result);
     }
@@ -148,7 +147,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 // I need to check to see if an obj in the array has a children key value and return true or false.
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let children = 0;
+
+  arr.forEach(x => {
+    if (x.name === character) {
+      Object.keys(x).forEach((key, index) => {
+        if (key === 'children') {
+
+          children = Object.values(x)[index].length;
+        }
+      });
+    }
+  });
+  return children ? true : false;
 
 };
 
