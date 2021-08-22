@@ -120,7 +120,7 @@ const returnNames = (arr) => {
   return arr.reduce((acc, cur) => {
     acc.push(cur.name);
     return acc;
-  } , []);
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split('').reduce((acc, cur) => cur + acc, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -326,7 +326,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the string with the characters in reverse order', () => {
     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
   });
