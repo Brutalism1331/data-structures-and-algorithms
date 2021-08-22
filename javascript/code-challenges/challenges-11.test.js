@@ -19,7 +19,9 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  // Solution code here...
+  return Object.keys(obj).map(x => {
+    return (`<li>${x}: ${obj[x]}</li>`);
+  });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +35,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.reduce((acc, cur) => {
+    let tally = cur.reduce((inAcc, inCur) => {
+      if (inCur === target) {
+        return inAcc + 1;
+      }
+      return inAcc;
+    }, 0);
+    return tally + acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +57,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((acc, cur) => {
+    let tally = cur.reduce((inAcc, inCur) => {
+      return inCur + inAcc;
+    }, 0);
+    return tally + acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
